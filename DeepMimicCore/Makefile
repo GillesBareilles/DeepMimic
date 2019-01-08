@@ -5,8 +5,9 @@ MKDIR = mkdir -p
 EIGEN_DIR = ../../libraries/eigen
 BULLET_INC_DIR = ../../libraries/bullet3/src
 
-PYTHON_INC = /usr/include/python3.6m
-PYTHON_LIB = /usr/lib/ -lpython3.6m
+PYTHONDIR = /home/gilles.bareilles/anaconda3/envs/py36
+PYTHON_INC = $(PYTHONDIR)/include/python3.6m
+PYTHON_LIB = $(PYTHONDIR)/lib/ -lpython3.6m
 
 INC = -I./ \
 	-I$(EIGEN_DIR) \
@@ -14,7 +15,7 @@ INC = -I./ \
 
 LIBS = -lGLEW -lGL -lGLU -lglut -lBulletDynamics -lBulletCollision -lLinearMath -lm -lstdc++
 
-CC = clang++
+CC = clang++-6.0
 CFLAGS = -std=c++11 -O3 -Wall -fPIC 
 
 SRC_DIRS = util/ \
